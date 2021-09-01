@@ -1,22 +1,26 @@
-name: s3 upload action
-description: S3 Upload Action
+name: "Copy To S3"
+description: "AWS S3 cp"
+author: memememe
+      
 inputs:
-  local_path:
-    required: true
-    description: 'The source file'
-    default: ''
-  destination_location:
-    required: true
-    description: 'The destination'
-    default: ''  
+  source:
+    description: |-
+      The name of the key or the file to take as source
+    required: True
+  dest:
+    description: |-
+      The name of the key or the file to take as destination
+    required: True
+  aws_region:
+    description: |-
+      The region where the data will be stored (if the destination is s3)
+    required: False
+    default: us-east-1
+    
 runs:
   using: docker
-  image: docker:amazon/aws-cli
+  image: Dockerfile
   
-env:
-    SOURCE: ${{ inputs.local_path }}
-    DEST: ${{ inputs.destination_location }}  
-
 branding:
-  icon: 'check'
-  color: 'green'
+  icon: refresh-cw
+  color: green
