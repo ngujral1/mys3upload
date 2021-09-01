@@ -1,0 +1,18 @@
+name: s3 upload action
+description: S3 Upload Action
+inputs:
+  local_path:
+    required: true
+    description: 'The source file'
+    default: ''
+  destination_location:
+    required: true
+    description: 'The destination'
+    default: ''  
+runs:
+  using: docker
+  image: docker:amazon/aws-cli
+  
+env:
+    SOURCE: "${{ inputs.local_path }}"
+    DEST: ${{ inputs.destination_location }}  
