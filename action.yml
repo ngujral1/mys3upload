@@ -14,5 +14,9 @@ runs:
   image: docker:amazon/aws-cli
   
 env:
-    SOURCE: "${{ inputs.local_path }}"
+    SOURCE: ${{ inputs.local_path }}
     DEST: ${{ inputs.destination_location }}  
+
+branding:
+  icon: 'check'
+  color: 'green'
