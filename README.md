@@ -1,12 +1,12 @@
 ## Usage
 To copy a file
 ```
-    - name: Copy a file from s3
-      uses: ngujral1/mys3upload@HEAD
-      with:
-        source: 's3://some-bucket/something-remote'
-        dest: './something-local'
-        aws_region: 'us-west-2'
+- name: Copy a file from s3
+  uses: ngujral1/mys3upload@HEAD
+  with:
+    source: 's3://some-bucket/something-remote'
+    dest: './something-local'
+    aws_region: 'us-west-2'
 ```
 
 
