@@ -9,6 +9,22 @@ To copy a file
     aws_region: 'us-west-2'
 ```
 
+## Usage on GitHub Actions
+
+```
+- name: Configure AWS credentials from Test account
+  uses: aws-actions/configure-aws-credentials@v1
+  with:
+    aws-access-key-id: ${{ secrets.TEST_AWS_ACCESS_KEY_ID }}
+    aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
+    aws-region: us-east-1
+- name: Copy a file from s3
+  uses: ngujral1/mys3upload@HEAD
+  with:
+    source: 's3://some-bucket/something-remote'
+    dest: './something-local'
+    aws_region: 'us-west-2'    
+```
 
 ## Configuration
 
